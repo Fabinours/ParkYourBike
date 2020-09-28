@@ -7,6 +7,15 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 
+
+#Ajouter x figures au dashboard
+def joinFigures(app,*figures):
+    output = []
+    for i in range(0,len(figures)):
+        output.append(dcc.Graph(figure=figures[i]))
+    app.layout = html.Div(children=output)
+
+
 #PROGRAMME
 if __name__ == "__main__":
     
@@ -21,13 +30,11 @@ if __name__ == "__main__":
     #Type d'affichage de la carte
     fig2.update_layout(mapbox_style="light", mapbox_accesstoken="pk.eyJ1IjoiaGVyZWFsIiwiYSI6ImNrMW92ZnJ3dDBvaWQzbWw4MWMyemRmMTkifQ.ybaNjSTBRj1Cw45T379ZMA")
 
-    #Disposition des éléments graphiques de la page 
+    #Disposition des éléments graphiques de la page
     app = dash.Dash()
-    app.layout = html.Div([
-        dcc.Graph(figure=fig1),#histogramme
-        dcc.Graph(figure=fig2)#carte
-    ])
+    #Ajoute de l'histogramme et de la carte au dashboard
+    joinFigures(app,fig1,fig2)
     #Lancement de la page
-    app.run_server(debug=True, use_reloader=False)
+    app.run_server(debug=True, threaded=True,use_reloader=False)
 
     
