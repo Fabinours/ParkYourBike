@@ -26,6 +26,7 @@ Commande d'installation : ```pip install plotly & pip install dash & pip install
 Commande d'exécution : ```python main.py```
 
 Pour ouvrir l'application, ouvrer un navigateur web et rentrer l'URL ci-dessous.
+
 URL : http://127.0.0.1:8050/
 
 ## Developper Guide
