@@ -7,35 +7,40 @@ C'est pourquoi notre outil est composé d'un **histogramme** et d'**une carte**,
 ## Rapport d'analyse
 <img src="https://github.com/Fabinours/PYB/blob/master/PYB/Images/histo.png" width="400" height="200">  <img src="https://github.com/Fabinours/PYB/blob/master/PYB/Images/carte1.png" width="300" height="200">
 
-**La première figure** est **l'histogramme** illustrant **le nombre d'emplacement** de stationnement en fonction de **leur capacité d'accueil**. Pour des raisons de présentation et de lisibilité, nous avons ici limité notre histogramme à **150 de capacité**. Néanmoins, il est quand même important de souligner que **le plus grand emplacement** se situe à Rueil-Malmaison et peut accueillir jusqu'à **448 vélos**.<br>
-Hormis certaines valeurs isolées comme celle-ci, nous pouvons remarquer sur l'histogramme que **la majorité des emplacements** peuvent à peine accueillir **50 vélos**. En effet, **la valeur moyenne** de capacité d'accueil est **seulement de 10 vélos** par stationnement.
-son contenu reflète bien les résultats obtenus<br>
-ces résultats sont commentés<br>
-sa forme est de qualité (structuration, rédaction, etc...)<br>
-
-<img src="https://github.com/Fabinours/PYB/blob/master/PYB/Images/carte2.png" width="300" height="200">
+**La première figure** est **l'histogramme** illustrant **le nombre d'emplacements** de stationnements en fonction de **leur capacité d'accueil**. Pour des raisons de présentation et de lisibilité, nous avons ici limité notre histogramme à **150 de capacité**. Néanmoins, il est quand même important de souligner que **le plus grand emplacement** se situe à Rueil-Malmaison et peut accueillir jusqu'à **448 vélos**.<br>
+Hormis certaines valeurs isolées comme celle-ci, nous pouvons remarquer sur l'histogramme que **la majorité des emplacements** peuvent à peine accueillir **50 vélos**. En effet, **la valeur moyenne** de capacité d'accueil est **seulement de 10 vélos** par emplacement. De plus, seulement **8,7% des emplacements sont couverts** et seulement **0,3% des emplacements sont surveillés**.
+Tous ces résultats montrent que même si **de plus en plus d'emplacements de stationnements sont crées, très peu sont réellement utilisables du au nombre de places disponibles, mais surtout du au manque de sécurité.**
 
 ## User Guide
 
-est suffisamment documenté pour permettre l'exécution du code sur une autre machine
+Pour exécuter l'application, Python doit être installé ainsi que les packages suivants :
+- plotly
+- dash
+- pandas
+- requests
 
-les packages nécessaires sont identifiés :
-plotly
-dash
-pandas
+Commande d'installation : ```pip install plotly & pip install dash & pip install pandas & pip install requests```
 
-la commande d'installation est précisée
-sa forme est de qualité (structuration, rédaction, etc...)
+Commande d'exécution : ```python main.py```
 
+Pour ouvrir l'application, ouvrer un navigateur web et rentrer l'URL ci-dessous.
 URL : http://127.0.0.1:8050/
 
 ## Developper Guide
 
-est suffisamment documenté pour modifier ou étendre le code
+Le projet est décomposé en 3 parties : 
+- Le téléchargement des données, qui s'effectue lors de l'appel de fonction ```downloadCsv()```.
+- Le traitement des données téléchargées, qui s'effectue lors de l'appel de fonction ```modifyCsv()```.
+- L'affichage des données traitées, qui s'effectue dans la partie ```main```.
+
+Nous utilisons requests pour télécharger les données et modifions par la suite en brut les données. 
+Dans la partie ```main```, nous utilisons pandas et plotly pour créer les différents éléments graphiques, et dash pour gérer leur disposition.
 la forme est de qualité (structuration, rédaction, etc...)
 
 ### Crédits
 
 Développeurs : Fabien Courtois (@Fabinours) & Loic Fournier (@Hereal)<br>
+
 Source des données utilisées : https://www.data.gouv.fr/fr/datasets/stationnement-velo-en-ile-de-france/<br>
-Projet réalisé dans le cadre de l'unité Python, en 1ère année de cycle ingénieur à l'école ESIEE Paris.
+
+Projet réalisé dans le cadre de l'unité Python de l'école ESIEE Paris, en 1ère année de cycle ingénieur E3FI.
