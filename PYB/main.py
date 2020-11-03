@@ -9,16 +9,16 @@ import dash_html_components as html
 import requests
 import csv
 
-def downloadCsv():
+def downloadCsv(csvName):
     url = 'https://data.iledefrance.fr/explore/dataset/stationnement-velo-en-ile-de-france/download?format=csv'
     r = requests.get(url, allow_redirects=True)
-    open('test.csv', 'wb').write(r.content)
+    open(csvName, 'wb').write(r.content)
 
 
-def modifyCsv():
+def modifyCsv(csvName):
     lst=[]
     index = 1
-    reader = csv.reader(open('test.csv', 'r'),delimiter=";")
+    reader = csv.reader(open(csvName, 'r'),delimiter=";")
     for row in reader:
         for i in range(0,len(row)):
             if(row[i]=="geo_point_2d"):
@@ -33,7 +33,7 @@ def modifyCsv():
         lst[i].append(value[0])
         lst[i].append(value[1])
 
-    f = open('numbers3.csv', 'w')
+    f = open(csvName, 'w')
     with f:
         writer = csv.writer(f,delimiter=';')
         writer.writerows(lst)
@@ -49,12 +49,12 @@ def joinFigures(app,*figures):
 
 #PROGRAMME
 if __name__ == "__main__":
-
-    downloadCsv()
-    modifyCsv()
+    csvName = "data.csv"
+    downloadCsv(csvName)
+    modifyCsv(csvName)
     
     #Lecture des données
-    df = pd.read_csv('numbers3.csv',sep=';')
+    df = pd.read_csv(csvName,sep=';')
 
     #Création de l'histogramme
     fig1 = px.histogram(df, x="capacite",title="Histogramme du nombre de stationnements pour vélos en fonction de leur capacité d\'accueil")
