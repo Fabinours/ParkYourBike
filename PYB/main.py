@@ -9,12 +9,13 @@ import dash_html_components as html
 import requests
 import csv
 
+#Telecharge le fichier csv depuis data.iledefrance.fr
 def downloadCsv(csvName):
     url = 'https://data.iledefrance.fr/explore/dataset/stationnement-velo-en-ile-de-france/download?format=csv'
     r = requests.get(url, allow_redirects=True)
     open(csvName, 'wb').write(r.content)
 
-
+#Modifie le fichier selon nos besoins
 def modifyCsv(csvName):
     lst=[]
     index = 1
