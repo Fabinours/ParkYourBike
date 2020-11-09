@@ -11,7 +11,7 @@ C'est pourquoi notre outil est composé d'un **histogramme** et d'**une carte**,
 
 Hormis certaines valeurs isolées comme celle-ci, nous pouvons remarquer sur l'histogramme que **la majorité des emplacements** peuvent à peine accueillir **50 vélos**. En effet, **la valeur moyenne** de capacité d'accueil est **seulement de 10 vélos** par emplacement. De plus, seulement **8,7% des emplacements sont couverts** et seulement **0,3% des emplacements sont surveillés**.
 
-Tous ces résultats montrent que même si **de plus en plus d'emplacements de stationnements sont crées, très peu sont réellement utilisables du au nombre de places disponibles, mais surtout du au manque de sécurité.**
+Tous ces résultats montrent que même si **de plus en plus d'emplacements de stationnements sont crées, très peu sont réellement utilisables du au nombre de places disponibles, mais surtout du au manque de protection.**
 
 ## User Guide
 
