@@ -36,9 +36,8 @@ Le projet est décomposé en 3 parties :
 - Le traitement des données téléchargées, qui s'effectue lors de l'appel de fonction ```modifyCsv()```.
 - L'affichage des données traitées, qui s'effectue dans la partie ```main```.
 
-Nous utilisons requests pour télécharger les données et modifions par la suite en brut les données. 
-Dans la partie ```main```, nous utilisons pandas et plotly pour créer les différents éléments graphiques, et dash pour gérer leur disposition.
-la forme est de qualité (structuration, rédaction, etc...)
+Nous utilisons le package ```requests``` pour télécharger les données et modifions par la suite en brut les données. 
+Dans la partie ```main```, nous utilisons les packages ```pandas``` et ```plotly``` pour créer les différents éléments graphiques, et ```dash``` pour gérer leur disposition.
 
 ### Crédits
 
